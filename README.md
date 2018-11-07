@@ -5,3 +5,6 @@
 <p align="center">
   <img src="http://img.shields.io/Version/0.1.0.png" alt="Assignment 6 Version 0.1.0"/>
 </p>
+
+<p align="center"> Client and server code for Lab 6 <br>SMU CSE 5323 Fall 2018</p>
+
