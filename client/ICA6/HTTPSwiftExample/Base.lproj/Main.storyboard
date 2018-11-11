@@ -147,5 +147,174 @@
             </objects>
             <point key="canvasLocation" x="202.5" y="294.5"/>
         </scene>
+        <!--Skin Tone View Controller-->
+        <scene sceneID="StV-cL-20Z">
+            <objects>
+                <viewController id="ePH-Uc-U4D" customClass="SkinToneViewController" customModule="HTTPSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S2v-4z-ibs"/>
+                        <viewControllerLayoutGuide type="bottom" id="UbZ-Cb-c0F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Omv-Fo-9DI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-Er-SjW">
+                                <rect key="frame" x="16" y="51" width="343" height="564"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Waf-cf-fm9" customClass="CalibrateView" customModule="HTTPSwiftExample" customModuleProvider="target">
+                                <rect key="frame" x="74" y="20" width="240" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evG-ob-BRt">
+                                        <rect key="frame" x="8" y="10" width="224" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                        <state key="normal" title="Calibrate">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startCalibration:" destination="ePH-Uc-U4D" eventType="touchUpInside" id="zOm-pX-2Mi"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-Iv-Y6V">
+                                        <rect key="frame" x="193" y="10" width="39" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="dark_skin_tone"/>
+                                        <connections>
+                                            <action selector="confirmSend:" destination="ePH-Uc-U4D" eventType="touchUpInside" id="yfT-Z3-55c"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-qh-ZZz">
+                                        <rect key="frame" x="100" y="10" width="39" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="medium_skin_tone"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meM-hh-FS1">
+                                        <rect key="frame" x="146" y="10" width="39" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="medium_dark_skin_tone"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-LN-eqd">
+                                        <rect key="frame" x="53" y="10" width="39" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="medium_light_skin_tone"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cb-VQ-TXf">
+                                        <rect key="frame" x="8" y="10" width="39" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="light_skin_tone"/>
+                                    </button>
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qda-qp-sZO">
+                                        <rect key="frame" x="78" y="46" width="85" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="KNN"/>
+                                            <segment title="RF"/>
+                                        </segments>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swL-qV-3h5" customClass="PredictionView" customModule="HTTPSwiftExample" customModuleProvider="target">
+                                <rect key="frame" x="67" y="562" width="240" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellow" translatesAutoresizingMaskIntoConstraints="NO" id="yAE-JY-9jK">
+                                        <rect key="frame" x="95" y="21" width="51" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhX-Xw-03G">
+                                <rect key="frame" x="322" y="26" width="49" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="x_icon"/>
+                                <connections>
+                                    <action selector="cancelCalibration:" destination="ePH-Uc-U4D" eventType="touchUpInside" id="znU-wg-7MY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FTx-Er-SjW" firstAttribute="centerX" secondItem="Omv-Fo-9DI" secondAttribute="centerX" id="5g3-yL-yi3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calibrateButton" destination="evG-ob-BRt" id="ml5-Zx-upk"/>
+                        <outlet property="cancelButton" destination="FhX-Xw-03G" id="2o1-lz-AlG"/>
+                        <outlet property="modelSegmentedControl" destination="qda-qp-sZO" id="pC1-Mw-ddI"/>
+                        <outlet property="pic0" destination="0cb-VQ-TXf" id="7Md-6R-bgm"/>
+                        <outlet property="pic1" destination="xe1-LN-eqd" id="DiE-CI-hzX"/>
+                        <outlet property="pic2" destination="fyx-qh-ZZz" id="Eyb-uC-2ex"/>
+                        <outlet property="pic3" destination="meM-hh-FS1" id="ii4-Iu-IeP"/>
+                        <outlet property="pic4" destination="rDv-Iv-Y6V" id="hrP-lo-rjP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8u9-PV-T6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.5" y="1135.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Nu-bN-cER">
+            <objects>
+                <viewController id="xiE-cq-obq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LKM-QK-B83"/>
+                        <viewControllerLayoutGuide type="bottom" id="1GA-r7-K4u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fWJ-AG-LZc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-H5-MkI">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdx-fV-Kd9" userLabel="PopupView">
+                                        <rect key="frame" x="51" y="167" width="240" height="293"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf7-g6-y8a">
+                                                <rect key="frame" x="96" y="179" width="48" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-xm-03e">
+                                                <rect key="frame" x="103" y="69" width="34" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="send"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sdx-fV-Kd9" firstAttribute="centerY" secondItem="ihf-H5-MkI" secondAttribute="centerY" id="eio-kF-1Up"/>
+                                    <constraint firstItem="sdx-fV-Kd9" firstAttribute="centerX" secondItem="ihf-H5-MkI" secondAttribute="centerX" id="w92-jX-BeY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ihf-H5-MkI" firstAttribute="centerX" secondItem="fWJ-AG-LZc" secondAttribute="centerX" id="Yqm-Hn-Awf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqu-vD-9W3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="203.5" y="1973.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="dark_skin_tone" width="160" height="160"/>
+        <image name="light_skin_tone" width="160" height="160"/>
+        <image name="medium_dark_skin_tone" width="160" height="160"/>
+        <image name="medium_light_skin_tone" width="160" height="160"/>
+        <image name="medium_skin_tone" width="160" height="160"/>
+        <image name="x_icon" width="512" height="512"/>
+        <image name="yellow" width="160" height="160"/>
+    </resources>
 </document>
